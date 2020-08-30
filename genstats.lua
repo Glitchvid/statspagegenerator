@@ -88,7 +88,7 @@ end
 local function GenerateFlexbox(i, max, panel)
 	local flexbox = "" .. HTML.index.flexgraph
 	flexbox = string.gsub(flexbox, "$PANELNAME", tostring(panel.name))
-	flexbox = string.gsub(flexbox, "$URL", ( panel.url or string.lower(tostring(panel.name)) ) )
+	flexbox = string.gsub(flexbox, "$URL", ( panel.url or string.lower(tostring(panel.name)) ) .. ".html" )
 	flexbox = string.gsub(flexbox, "$PANELID", tostring(panel.id))
 	local flextype = "graphs"
 	if i == 1 then
