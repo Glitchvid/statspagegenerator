@@ -64,7 +64,7 @@ panels[11] = {
 	name	=	"DAL05 (Softlayer)", 
 	id		=	"46",
 	url		=	"dal05",
-	type="endpoint"
+	type	=	"endpoint"
 }
 panels[12] = {
 	name	=	"NFO (LA)", 
@@ -82,12 +82,6 @@ panels[14] = {
 	name	=	"C7 (SLC)",
 	id		=	"56",
 	url		=	"c7slc",
-	type	=	"endpoint"
-}
-panels[15] = {
-	name	=	"Zarth (CHI)",
-	id		=	"60",
-	url		=	"zarth",
 	type	=	"endpoint"
 }
 
