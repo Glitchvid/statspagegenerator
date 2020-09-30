@@ -128,30 +128,33 @@ for i=1, #panels do
 end
 
 -- This is ugly!
-local output	=  "" .. HTML.index.header
-
+-- TODO: Make this not horrible, don't hard code the array at least?
+local outtab = {}
+outtab[1] = HTML.index.header
 -- Transits
-output	=	output .. HTML.index.linkboxhead
-output	=	output .. HTML.index.h4transit
-output	=	output .. HTML.index.flexcontainerhead
-output	=	output .. GeneratePanelTable(transits)
-output	=	output .. HTML.index.flexcontainertail
+outtab[2]	= HTML.index.linkboxhead
+outtab[3]	= HTML.index.h4transit
+outtab[4]	= HTML.index.flexcontainerhead
+outtab[5]	= GeneratePanelTable(transits)
+outtab[6]	= HTML.index.flexcontainertail
 --Exchanges (part of the same linkbox)
-output	=	output .. HTML.index.h4exchange
-output	=	output .. HTML.index.flexcontainerhead
-output	=	output .. GeneratePanelTable(exchanges)
-output	=	output .. HTML.index.flexcontainertail
-output	=	output .. HTML.index.linkboxtail
+outtab[7]	= HTML.index.h4exchange
+outtab[8]	= HTML.index.flexcontainerhead
+outtab[9]	= GeneratePanelTable(exchanges)
+outtab[10]	= HTML.index.flexcontainertail
+outtab[11]	= HTML.index.linkboxtail
 -- Endpoints (new linkbox)
-output	=	output .. HTML.index.linkboxhead
-output	=	output .. HTML.index.h4endpoint
-output	=	output .. HTML.index.flexcontainerhead
-output	=	output .. GeneratePanelTable(endpoints)
-output	=	output .. HTML.index.flexcontainertail
-output	=	output .. HTML.index.linkboxtail
-
-output	=	output .. HTML.index.footer
+outtab[12]	= HTML.index.linkboxhead
+outtab[13]	= HTML.index.h4endpoint
+outtab[14]	= HTML.index.flexcontainerhead
+outtab[15]	= GeneratePanelTable(endpoints)
+outtab[16]	= HTML.index.flexcontainertail
+outtab[17]	= HTML.index.linkboxtail
+--
+outtab[18]	= HTML.index.footer
 
 local file = io.open( GetFilePath() .. "index.html", "w")
-assert(file:write(output))
-print("\nWrote: " .. "index.html" )
+assert(file:write(table.concat(outtab)))
+print("====================" )
+print("Wrote: " .. "index.html" )
+print("\n \t DONE!" )
